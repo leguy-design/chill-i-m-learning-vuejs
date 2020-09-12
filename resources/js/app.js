@@ -8,8 +8,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-Vue.component('test-component', require('./components/TestComponent.vue').default);
-Vue.component('child-component', require('./components/ChildComponent.vue').default);
+Vue.component('products-component', require('./components/ProductsComponent.vue').default);
+Vue.component('product-component', require('./components/ProductComponent.vue').default);
 
 const app = new Vue({
     el: '#app',
