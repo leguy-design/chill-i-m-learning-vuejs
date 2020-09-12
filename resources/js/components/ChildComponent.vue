@@ -1,18 +1,10 @@
 <template>
     <div>
-        <span>ici: {{ foo }}</span>
+        <span>C'est enregistré bg et t'as cliqué {{ amount }} fois</span>
     </div>
 </template>
 <script>
     export default {
-        data: function () {
-            return {
-                amount: 0,
-                dummyData: [],
-            }
-        },
-        props: [
-            'foo'
-        ],
+        props: ['amount'],
     }
 </script>

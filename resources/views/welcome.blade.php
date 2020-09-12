@@ -19,7 +19,7 @@
 <body>
     <div id="app">
         <span>dsqmldk</span>
-        <test-component :foo="gang"/>
+        <test-component/>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

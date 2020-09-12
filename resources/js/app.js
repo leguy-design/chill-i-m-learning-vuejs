@@ -10,6 +10,7 @@ window.Vue = require('vue');
 
 Vue.component('test-component', require('./components/TestComponent.vue').default);
 Vue.component('child-component', require('./components/ChildComponent.vue').default);
+Vue.component('images-component', require('./components/ImagesComponent.vue').default);
 
 const app = new Vue({
     el: '#app',
