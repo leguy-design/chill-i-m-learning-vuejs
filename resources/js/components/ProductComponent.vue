@@ -11,6 +11,7 @@
 </template>
 <script>
     export default {
+        // on utilise props pour envoyer des values de product
         props: [
             'thumbnail',
             'name',
