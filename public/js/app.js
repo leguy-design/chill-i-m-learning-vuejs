@@ -19636,7 +19636,16 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "card h-100 rounded", staticStyle: { width: "18rem" } },
+    {
+      staticClass: "card h-100 rounded",
+      staticStyle: {
+        width: "18rem",
+        "margin-left": "3rem",
+        "margin-right": "3rem",
+        "margin-top": "3rem",
+        "margin-bottom": "3rem"
+      }
+    },
     [
       _c("img", {
         staticClass: "card-img-top",
@@ -19653,8 +19662,8 @@ var render = function() {
         _c("p", { staticClass: "card-text" }, [_vm._v(_vm._s(_vm.description))])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "card-footer" }, [
-        _c("span", [_vm._v(_vm._s(_vm.price))])
+      _c("div", { staticClass: "card-footer bg-primary" }, [
+        _c("span", [_vm._v(_vm._s(_vm.price) + " wassup")])
       ])
     ]
   )
@@ -19687,9 +19696,10 @@ var render = function() {
     _vm._l(this.products, function(product) {
       return _c(
         "div",
-        { staticClass: "mx-auto" },
+        { staticClass: "my-auto mx-auto" },
         [
           _c("product-component", {
+            staticClass: "shadow-lg",
             attrs: {
               thumbnail: product.thumbnail,
               description: product.description,
