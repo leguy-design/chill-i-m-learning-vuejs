@@ -1920,6 +1920,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  // on utilise props pour envoyer des values de product
   props: ['thumbnail', 'name', 'price']
 });
 
@@ -1943,19 +1944,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+// ca c fé auto mé bon
+ // on exporte ce code vers l'app.js
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  // kesako ca c auto auto
   components: {
     ProductComponent: _ProductComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
+  // on cite la function qu'on return un tableau vide de products'
   data: function data() {
     return {
       products: []
     };
   },
+  // quand le document est ready
   mounted: function mounted() {
     this.getImages();
   },
+  // on indique comment passer l'objet'
   methods: {
     // pour récuperer les données des tes images par exemple:
     getImages: function getImages() {
@@ -32075,8 +32085,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /mnt/c/Users/valou/lol/new_project/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /mnt/c/Users/valou/lol/new_project/resources/css/app.css */"./resources/css/app.css");
+__webpack_require__(/*! /mnt/c/Users/leguy/projects/chill-i-m-learning-vuejs/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /mnt/c/Users/leguy/projects/chill-i-m-learning-vuejs/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })

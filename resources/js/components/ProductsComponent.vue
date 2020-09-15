@@ -10,11 +10,11 @@
 
 </template>
 <script>
-// ca c fé auto mé bon
+// s'occupe d'implémenter la div product-component et est produit a la compilation
     import ProductComponent from "./ProductComponent";
     // on exporte ce code vers l'app.js
     export default {
-        // kesako ca c auto auto
+        // s'occupe d'implémenter la div product-component et est produit a la compilation
         components: {ProductComponent},
         // on cite la function qu'on return un tableau vide de products'
         data: function () {
@@ -22,13 +22,13 @@
                 products: [],
             }
         },
-        // quand le document est ready
+        // quand le document est chargé on appelle this.getImages
         mounted() {
             this.getImages();
         },
         // on indique comment passer l'objet'
         methods: {
-            // pour récuperer les données des tes images par exemple:
+            // pour récuperer les données des images:
             getImages: function () {
                 axios.get('/products')
                     .then(response => {
