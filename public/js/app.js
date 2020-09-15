@@ -1919,9 +1919,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // on utilise props pour envoyer des values de product
-  props: ['thumbnail', 'name', 'price']
+  props: ['thumbnail', 'name', 'price', 'description']
 });
 
 /***/ }),
@@ -1947,11 +1950,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-// ca c fé auto mé bon
+// s'occupe d'implémenter la div product-component et est produit a la compilation
  // on exporte ce code vers l'app.js
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  // kesako ca c auto auto
+  // s'occupe d'implémenter la div product-component et est produit a la compilation
   components: {
     ProductComponent: _ProductComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -1961,13 +1964,13 @@ __webpack_require__.r(__webpack_exports__);
       products: []
     };
   },
-  // quand le document est ready
+  // quand le document est chargé on appelle this.getImages
   mounted: function mounted() {
     this.getImages();
   },
   // on indique comment passer l'objet'
   methods: {
-    // pour récuperer les données des tes images par exemple:
+    // pour récuperer les données des images:
     getImages: function getImages() {
       var _this = this;
 
@@ -19640,8 +19643,14 @@ var render = function() {
         attrs: { src: _vm.thumbnail, alt: _vm.name }
       }),
       _vm._v(" "),
+      _c("div", { staticClass: "card-header" }, [
+        _c("span", { staticClass: "card-title font-weight-bold" }, [
+          _vm._v(_vm._s(_vm.name))
+        ])
+      ]),
+      _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
-        _c("p", { staticClass: "card-text" }, [_vm._v(_vm._s(_vm.name))])
+        _c("p", { staticClass: "card-text" }, [_vm._v(_vm._s(_vm.description))])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card-footer" }, [
@@ -19675,7 +19684,7 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "row text-center" },
-    _vm._l(_vm.products, function(product) {
+    _vm._l(this.products, function(product) {
       return _c(
         "div",
         { staticClass: "mx-auto" },
@@ -19683,6 +19692,7 @@ var render = function() {
           _c("product-component", {
             attrs: {
               thumbnail: product.thumbnail,
+              description: product.description,
               name: product.name,
               price: product.price
             }

@@ -1,8 +1,11 @@
 <template>
         <div class="card h-100 rounded" style="width: 18rem;">
             <img :src="thumbnail" :alt="name" class="card-img-top" >
+            <div class="card-header">
+                <span class="card-title font-weight-bold">{{ name }}</span>
+            </div>
             <div class="card-body">
-                <p class="card-text">{{ name }}</p>
+                <p class="card-text">{{ description }}</p>
             </div>
             <div class="card-footer">
                 <span>{{ price }}</span>
@@ -16,6 +19,7 @@
             'thumbnail',
             'name',
             'price',
+            'description'
         ],
     }
 </script>

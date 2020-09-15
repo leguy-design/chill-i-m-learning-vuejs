@@ -2,9 +2,9 @@
 <!--    i faut toujours une div pour englober le contenu d'un component-->
     <div class="row text-center">
 <!--        pour chaque produit dans produits-->
-        <div v-for="product in products" class="mx-auto">
+        <div v-for="product in this.products" class="mx-auto">
 <!--            ici c po obligé mais on appelle le produc component en lui passant les values -->
-            <product-component :thumbnail="product.thumbnail" :name="product.name" :price="product.price"/>
+            <product-component :thumbnail="product.thumbnail":description="product.description" :name="product.name" :price="product.price"/>
         </div>
     </div>
 
