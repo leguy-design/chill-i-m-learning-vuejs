@@ -1950,6 +1950,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 // s'occupe d'implémenter la div product-component et est produit a la compilation
  // on exporte ce code vers l'app.js
 
@@ -1961,7 +1963,8 @@ __webpack_require__.r(__webpack_exports__);
   // on cite la function qu'on return un tableau vide de products'
   data: function data() {
     return {
-      products: []
+      products: [],
+      q: ''
     };
   },
   // quand le document est chargé on appelle this.getImages
@@ -19663,7 +19666,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "card-footer bg-primary" }, [
-        _c("span", [_vm._v(_vm._s(_vm.price) + " wassup")])
+        _c("span", { staticClass: "text-white" }, [_vm._v(_vm._s(_vm.price))])
       ])
     ]
   )
@@ -19690,29 +19693,48 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "row text-center" },
-    _vm._l(this.products, function(product) {
-      return _c(
-        "div",
-        { staticClass: "my-auto mx-auto" },
-        [
-          _c("product-component", {
-            staticClass: "shadow-lg",
-            attrs: {
-              thumbnail: product.thumbnail,
-              description: product.description,
-              name: product.name,
-              price: product.price
-            }
-          })
-        ],
-        1
-      )
+  return _c("div", [
+    _c("input", {
+      directives: [
+        { name: "model", rawName: "v-model", value: _vm.q, expression: "q" }
+      ],
+      staticClass: "form-control",
+      attrs: { type: "text", placeholder: "Recherche par mots-clés" },
+      domProps: { value: _vm.q },
+      on: {
+        input: function($event) {
+          if ($event.target.composing) {
+            return
+          }
+          _vm.q = $event.target.value
+        }
+      }
     }),
-    0
-  )
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "row text-center" },
+      _vm._l(this.products, function(product) {
+        return _c(
+          "div",
+          { staticClass: "my-auto mx-auto" },
+          [
+            _c("product-component", {
+              staticClass: "shadow-lg",
+              attrs: {
+                thumbnail: product.thumbnail,
+                description: product.description,
+                name: product.name,
+                price: product.price
+              }
+            })
+          ],
+          1
+        )
+      }),
+      0
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -31911,6 +31933,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 Vue.component('products-component', __webpack_require__(/*! ./components/ProductsComponent.vue */ "./resources/js/components/ProductsComponent.vue")["default"]);
 Vue.component('product-component', __webpack_require__(/*! ./components/ProductComponent.vue */ "./resources/js/components/ProductComponent.vue")["default"]);
+Vue.component('wish-list', __webpack_require__(/*! ./components/ProductComponent.vue */ "./resources/js/components/ProductComponent.vue")["default"]);
 var app = new Vue({
   el: '#app'
 });

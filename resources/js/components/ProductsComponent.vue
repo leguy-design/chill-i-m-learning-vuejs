@@ -1,13 +1,15 @@
 <template>
-<!--    i faut toujours une div pour englober le contenu d'un component-->
-    <div class="row text-center">
-<!--        pour chaque produit dans produits-->
-        <div v-for="product in this.products" class="my-auto mx-auto">
-<!--            ici c po obligé mais on appelle le produc component en lui passant les values -->
-            <product-component :thumbnail="product.thumbnail":description="product.description" :name="product.name" :price="product.price" class="shadow-lg"/>
+    <!--    i faut toujours une div pour englober le contenu d'un component-->
+    <div>
+        <input v-model="q" type="text" placeholder="Recherche par mots-clés" class="form-control">
+        <div class="row text-center">
+            <!--        pour chaque produit dans produits-->
+            <div v-for="product in this.products" class="my-auto mx-auto">
+                <!--            ici c po obligé mais on appelle le produc component en lui passant les values -->
+                <product-component :thumbnail="product.thumbnail":description="product.description" :name="product.name" :price="product.price" class="shadow-lg"/>
+            </div>
         </div>
     </div>
-
 </template>
 <script>
 // s'occupe d'implémenter la div product-component et est produit a la compilation
@@ -20,6 +22,7 @@
         data: function () {
             return {
                 products: [],
+                q: '',
             }
         },
         // quand le document est chargé on appelle this.getImages
@@ -39,6 +42,6 @@
                     console.log(error);
                 });
             }
-        }
+        },
     }
 </script>

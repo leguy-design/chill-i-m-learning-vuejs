@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', 'HomeController@index')->name('welcome');
+
+Route::get('/wish-list', 'WishListController@index')->name('wish-list');
 
 Route::get('/products', function () {
     return response()->json([
