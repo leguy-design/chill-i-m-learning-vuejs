@@ -1,7 +1,6 @@
 <template>
     <!--    i faut toujours une div pour englober le contenu d'un component-->
     <div>
-        <input v-model="q" type="text" placeholder="Recherche par mots-clés" class="form-control">
         <div class="row text-center">
             <!--        pour chaque produit dans produits-->
             <div v-for="product in this.products" class="my-auto mx-auto">

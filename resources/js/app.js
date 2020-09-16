@@ -10,7 +10,7 @@ window.Vue = require('vue');
 
 Vue.component('products-component', require('./components/ProductsComponent.vue').default);
 Vue.component('product-component', require('./components/ProductComponent.vue').default);
-Vue.component('wish-list', require('./components/ProductComponent.vue').default);
+Vue.component('wish-list-component', require('./components/WishListComponent').default);
 
 
 const app = new Vue({
