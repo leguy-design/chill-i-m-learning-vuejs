@@ -1988,12 +1988,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // on exporte ce code vers l'app.js
 /* harmony default export */ __webpack_exports__["default"] = ({
   // s'occupe d'implémenter la div product-component et est produit a la compilation
   // on cite la function qu'on return un tableau vide de products'
   data: function data() {
     return {
+      listCart: [],
       products: [],
       q: ''
     };
@@ -2010,6 +2020,14 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    addCart: function addCart(product) {
+      var itemcart = {
+        name: product.name,
+        price: product.price,
+        how: 1
+      };
+      this.listCart.push(itemcart);
     }
   },
   computed: {
@@ -2038,6 +2056,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -19755,28 +19776,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bottom-0 right-0 fixed m-3 card bg-danger text-white" },
-      [
-        _c("span", { staticClass: "card-header" }, [_vm._v("Panier")]),
+  return _c(
+    "div",
+    { staticClass: "bottom-0 right-0 fixed m-3 card bg-danger text-white" },
+    [
+      _c("span", { staticClass: "card-header" }, [_vm._v("Panier")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-body" }, [
+        _c("span", [_vm._v(_vm._s(_vm.name))]),
         _vm._v(" "),
-        _c("span", { staticClass: "card-body" }, [
-          _c("span", { staticClass: "card-title" }, [_vm._v("Hello world")]),
-          _vm._v(" "),
-          _c("span", [_vm._v("12e")])
-        ])
-      ]
-    )
-  }
-]
+        _c("span", [_vm._v(_vm._s(_vm.price))])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -19910,18 +19924,52 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "card-footer bg-primary" }, [
-                  _c("span", { staticClass: "text-white" }, [
-                    _vm._v(_vm._s(product.price))
-                  ])
-                ])
+                _c(
+                  "div",
+                  {
+                    staticClass: "card-footer bg-primary",
+                    on: {
+                      click: function($event) {
+                        return _vm.addCart(product)
+                      }
+                    }
+                  },
+                  [
+                    _c("button", { staticClass: "btn btn-primary" }, [
+                      _vm._v(_vm._s(product.price))
+                    ])
+                  ]
+                )
               ]
             )
           ])
         }),
         0
       )
-    ])
+    ]),
+    _vm._v(" "),
+    _vm.listCart.length > 0
+      ? _c(
+          "div",
+          {
+            staticClass: "bottom-0 right-0 fixed m-3 card bg-danger text-white"
+          },
+          [
+            _c("span", { staticClass: "card-header" }, [_vm._v("Panier")]),
+            _vm._v(" "),
+            _vm._l(_vm.listCart, function(itemcart) {
+              return _c("div", [
+                _c("div", { staticClass: "card-body" }, [
+                  _c("span", [_vm._v(_vm._s(itemcart.name))]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(itemcart.price))])
+                ])
+              ])
+            })
+          ],
+          2
+        )
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -19949,8 +19997,6 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("panier-component"),
-      _vm._v(" "),
       _c("input", {
         directives: [
           { name: "model", rawName: "v-model", value: _vm.q, expression: "q" }
@@ -19999,13 +20045,24 @@ var render = function() {
         ])
       }),
       _vm._v(" "),
-      _c("span", [_vm._v(_vm._s(_vm.listCart))]),
-      _vm._v(" "),
-      _vm._l(_vm.listCart, function(itemcart) {
-        return _c("div", [
-          _vm._v("\n        " + _vm._s(itemcart.name) + "\n    ")
-        ])
-      })
+      _c(
+        "div",
+        { staticClass: "bottom-0 right-0 fixed m-3 card bg-danger text-white" },
+        [
+          _c("span", { staticClass: "card-header" }, [_vm._v("Panier")]),
+          _vm._v(" "),
+          _vm._l(_vm.listCart, function(itemcart) {
+            return _c("div", [
+              _c("div", { staticClass: "card-body" }, [
+                _c("span", [_vm._v(_vm._s(itemcart.name))]),
+                _vm._v(" "),
+                _c("span", [_vm._v(_vm._s(itemcart.price))])
+              ])
+            ])
+          })
+        ],
+        2
+      )
     ],
     2
   )

@@ -1,7 +1,5 @@
 <template>
     <div>
-        <panier-component/>
-
         <input v-model="q" type="text" placeholder="Recherche par mots-clés" class="form-control">
         <div v-for="product in getFilteredProducts">
             <div class="container border border-black my-2 ">
@@ -14,9 +12,14 @@
                 </div>
             </div>
         </div>
-        <span>{{ listCart }}</span>
-        <div v-for="itemcart in listCart">
-            {{ itemcart.name }}
+        <div class="bottom-0 right-0 fixed m-3 card bg-danger text-white">
+            <span class="card-header">Panier</span>
+            <div v-for="itemcart in listCart">
+                <div class="card-body">
+                    <span>{{ itemcart.name }}</span>
+                    <span>{{ itemcart.price }}</span>
+                </div>
+            </div>
         </div>
     </div>
 </template>

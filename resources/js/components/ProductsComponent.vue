@@ -15,10 +15,19 @@
                         <div class="card-body relative">
                             <p class="card-text absolute absolute-45">{{ product.description }}</p>
                         </div>
-                        <div class="card-footer bg-primary">
-                            <span class="text-white">{{ product.price }}</span>
+                        <div v-on:click="addCart(product)" class="card-footer bg-primary">
+                            <button class="btn btn-primary">{{product.price}}</button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div v-if="listCart.length > 0" class="bottom-0 right-0 fixed m-3 card bg-danger text-white">
+            <span class="card-header">Panier</span>
+            <div v-for="itemcart in listCart">
+                <div class="card-body">
+                    <span>{{ itemcart.name }}</span>
+                    <span>{{ itemcart.price }}</span>
                 </div>
             </div>
         </div>
@@ -31,6 +40,7 @@
         // on cite la function qu'on return un tableau vide de products'
         data: function () {
             return {
+                listCart: [],
                 products: [],
                 q: '',
             }
@@ -48,6 +58,14 @@
                 .catch(error => {
                     console.log(error);
                 });
+            },
+            addCart(product){
+                const itemcart = {
+                    name : product.name,
+                    price : product.price,
+                    how : 1
+                }
+                this.listCart.push(itemcart)
             }
         },
         computed: {
