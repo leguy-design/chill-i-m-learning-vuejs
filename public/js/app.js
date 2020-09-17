@@ -1938,7 +1938,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ProductComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProductComponent */ "./resources/js/components/ProductComponent.vue");
 //
 //
 //
@@ -1951,14 +1950,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-// s'occupe d'implémenter la div product-component et est produit a la compilation
- // on exporte ce code vers l'app.js
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// on exporte ce code vers l'app.js
 /* harmony default export */ __webpack_exports__["default"] = ({
   // s'occupe d'implémenter la div product-component et est produit a la compilation
-  components: {
-    ProductComponent: _ProductComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
   // on cite la function qu'on return un tableau vide de products'
   data: function data() {
     return {
@@ -1966,14 +1974,10 @@ __webpack_require__.r(__webpack_exports__);
       q: ''
     };
   },
-  // quand le document est chargé on appelle this.getImages
-  mounted: function mounted() {
-    this.getImages();
-  },
   // on indique comment passer l'objet'
   methods: {
     // pour récuperer les données des images:
-    getImages: function getImages() {
+    getProductOnProducts: function getProductOnProducts() {
       var _this = this;
 
       axios.get('/products').then(function (response) {
@@ -1983,6 +1987,19 @@ __webpack_require__.r(__webpack_exports__);
         console.log(error);
       });
     }
+  },
+  computed: {
+    getFilteredProd: function getFilteredProd() {
+      var _this2 = this;
+
+      return this.products.filter(function (product) {
+        return product.description.toLowerCase().includes(_this2.q.toLowerCase());
+      });
+    }
+  },
+  // quand le document est chargé on appelle this.getProductOnProducts
+  mounted: function mounted() {
+    this.getProductOnProducts();
   }
 });
 
@@ -19754,29 +19771,73 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c(
-      "div",
-      { staticClass: "row text-center" },
-      _vm._l(this.products, function(product) {
-        return _c(
-          "div",
-          { staticClass: "my-auto mx-auto" },
-          [
-            _c("product-component", {
-              staticClass: "shadow-lg",
-              attrs: {
-                thumbnail: product.thumbnail,
-                description: product.description,
-                name: product.name,
-                price: product.price
-              }
-            })
-          ],
-          1
-        )
-      }),
-      0
-    )
+    _c("input", {
+      directives: [
+        { name: "model", rawName: "v-model", value: _vm.q, expression: "q" }
+      ],
+      staticClass: "form-control",
+      attrs: { type: "text", placeholder: "Recherche par mots-clés" },
+      domProps: { value: _vm.q },
+      on: {
+        input: function($event) {
+          if ($event.target.composing) {
+            return
+          }
+          _vm.q = $event.target.value
+        }
+      }
+    }),
+    _vm._v(" "),
+    _c("div", { staticClass: "container" }, [
+      _c(
+        "div",
+        { staticClass: "row text-center" },
+        _vm._l(_vm.getFilteredProd, function(product) {
+          return _c("div", { staticClass: "my-auto mx-auto" }, [
+            _c(
+              "div",
+              {
+                staticClass: "card h-100 rounded",
+                staticStyle: {
+                  "min-height": "42rem",
+                  "max-height": "42rem",
+                  width: "18rem",
+                  "margin-left": "3rem",
+                  "margin-right": "3rem",
+                  "margin-top": "3rem",
+                  "margin-bottom": "3rem"
+                }
+              },
+              [
+                _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: { src: product.thumbnail, alt: product.name }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-header" }, [
+                  _c("span", { staticClass: "card-title font-weight-bold" }, [
+                    _vm._v(_vm._s(product.name))
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body relative" }, [
+                  _c("p", { staticClass: "card-text absolute absolute-45" }, [
+                    _vm._v(_vm._s(product.description))
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-footer bg-primary" }, [
+                  _c("span", { staticClass: "text-white" }, [
+                    _vm._v(_vm._s(product.price))
+                  ])
+                ])
+              ]
+            )
+          ])
+        }),
+        0
+      )
+    ])
   ])
 }
 var staticRenderFns = []
