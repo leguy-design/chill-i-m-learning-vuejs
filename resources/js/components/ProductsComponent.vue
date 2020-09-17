@@ -25,10 +25,7 @@
         <div v-if="listCart.length > 0" class="bottom-0 right-0 fixed m-3 card bg-danger text-white">
             <span class="card-header">Panier</span>
             <div v-for="itemcart in listCart">
-                <div class="card-body">
-                    <span>{{ itemcart.name }}</span>
-                    <span>{{ itemcart.price }}</span>
-                </div>
+                <panier-component :name="itemcart.name" :price="itemcart.price"/>
             </div>
         </div>
     </div>

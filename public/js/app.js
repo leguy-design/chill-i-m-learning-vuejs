@@ -1994,9 +1994,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 // on exporte ce code vers l'app.js
 /* harmony default export */ __webpack_exports__["default"] = ({
   // s'occupe d'implémenter la div product-component et est produit a la compilation
@@ -19958,13 +19955,15 @@ var render = function() {
             _c("span", { staticClass: "card-header" }, [_vm._v("Panier")]),
             _vm._v(" "),
             _vm._l(_vm.listCart, function(itemcart) {
-              return _c("div", [
-                _c("div", { staticClass: "card-body" }, [
-                  _c("span", [_vm._v(_vm._s(itemcart.name))]),
-                  _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(itemcart.price))])
-                ])
-              ])
+              return _c(
+                "div",
+                [
+                  _c("panier-component", {
+                    attrs: { name: itemcart.name, price: itemcart.price }
+                  })
+                ],
+                1
+              )
             })
           ],
           2
