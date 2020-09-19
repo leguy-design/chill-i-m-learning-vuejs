@@ -2097,6 +2097,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -20095,7 +20096,9 @@ var render = function() {
               _c("div", { staticClass: "card-body" }, [
                 _c("span", [_vm._v(_vm._s(itemcart.name))]),
                 _vm._v(" "),
-                _c("span", [_vm._v(_vm._s(itemcart.price))])
+                _c("span", [_vm._v(_vm._s(itemcart.price))]),
+                _vm._v(" "),
+                _c("span", [_vm._v(_vm._s(itemcart.amount))])
               ])
             ])
           })

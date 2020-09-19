@@ -20,6 +20,7 @@
                 <div class="card-body">
                     <span>{{ itemcart.name }}</span>
                     <span>{{ itemcart.price }}</span>
+                    <span>{{ itemcart.amount }}</span>
                 </div>
             </div>
         </div>
@@ -53,7 +54,9 @@
                     name : product.name,
                     price : product.price,
                     amount: product.amount
+
                 };
+
                 this.listCart.push(itemcart)
             }
         },
@@ -62,7 +65,7 @@
                 return this.products.filter(product => {
                     return product.description.toLowerCase().includes(this.q.toLowerCase())
                 })
-            }
+            },
         },
         // quand le document est chargé on appelle this.getImages
         mounted() {
@@ -70,3 +73,13 @@
         },
     }
 </script>
+
+let products = [...state.product];
+let foundProduct = products.find(prod => prod.title === action.payload.title);
+
+if (foundProduct) {
+foundProduct.quantity++;
+} else {
+action.payload.quantity = 1;
+products.push(action.payload);
+}
