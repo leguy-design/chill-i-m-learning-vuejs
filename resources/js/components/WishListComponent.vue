@@ -1,5 +1,7 @@
 <template>
     <div>
+        <button v-on:click="count++" class="rounded-full bg-success text-white text-2xl">+</button>
+        <span>{{ count }}</span>
         <input v-model="q" type="text" placeholder="Recherche par mots-clés" class="form-control">
         <div v-for="product in getFilteredProducts">
             <div class="container border border-black my-2 ">
@@ -30,7 +32,7 @@
                 listCart: [],
                 products: [],
                 q: '',
-
+                count: 0
             }
         },
         // on indique comment passer l'objet'
@@ -50,8 +52,8 @@
                 const itemcart = {
                     name : product.name,
                     price : product.price,
-                    how : 1
-                }
+                    amount: product.amount
+                };
                 this.listCart.push(itemcart)
             }
         },

@@ -25,7 +25,7 @@ Route::get('/products', function () {
                 'name' => 'Montre mécanique apparente plaquée or',
                 'description' => 'Nouveau Top Qualité Hommes De Luxe Squelette À Remontage Automatique Mécanique Montres Or En Acier Inoxydable Étanche Montre-Bracelet Vente Chaude',
                 'price' => '$50',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             1 => [
@@ -33,7 +33,7 @@ Route::get('/products', function () {
                 'name' => 'Montre classique vintage bracelet en cuir vegan',
                 'description' => 'Brand Pa nerai Watch Mens Mechanical Automatic Watches Best Gift Leather Wristwach with box',
                 'price' => '$42',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             2 => [
@@ -41,7 +41,7 @@ Route::get('/products', function () {
                 'name' => 'Montre classique vintage bracelet en cuir vegan',
                 'description' => 'Brand Pa nerai Watch Mens Mechanical Automatic Watches Best Gift Leather Wristwach with box',
                 'price' => '$42',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             3 => [
@@ -49,7 +49,7 @@ Route::get('/products', function () {
                 'name' => 'Montre classique Tissot',
                 'description' => 'TISSOT hommes nouveau 2020 luxe automatique Quatz montres classique bracelet en cuir montre-bracelet avec boîte-cadeau',
                 'price' => '$26,07',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             4 => [
@@ -57,7 +57,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Citizen, cadran bleu',
                 'description' => '2021 NEW Fashion CITIZEN Automatic Quatz Watches Blue Angels Men\'s Watch World Chronograph',
                 'price' => '$14',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             5 => [
@@ -65,7 +65,7 @@ Route::get('/products', function () {
                 'name' => 'Montre classique vintage bracelet en cuir vegan',
                 'description' => 'Brand Pa nerai Watch Mens Mechanical Automatic Watches Best Gift Leather Wristwach with box',
                 'price' => '$42',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             6 => [
@@ -73,7 +73,7 @@ Route::get('/products', function () {
                 'name' => 'Montre TU\'D\'OR GENEVE CADRAN BLEU',
                 'description' => 'Nouvelle montre de marque Tu\'d\'or hommes montre-bracelet étanche militaire montres automatiques mécaniques',
                 'price' => '$5',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             7 => [
@@ -81,7 +81,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Seiko Noire',
                 'description' => 'Montre pour homme de sport étanche Seiko de haute qualité 4 couleurs',
                 'price' => '$23',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             8 => [
@@ -89,7 +89,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Steampunk KINYUED',
                 'description' => 'KINYUED Mécanique Automatique Montre Hommes Tourbillon Montre-Bracelet Sport Horloge Mécanisme À Remontage Automatique Montres Casual Lune horloge homme montres',
                 'price' => '$49',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             9 => [
@@ -97,7 +97,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Wwoorr rectangle vintage',
                 'description' => 'reloj hombre Square watch men\'s WWOOR top brand luxury black leather gold quartz men\'s automatic winding watch sports waterproof clock Relogio Masculino watch box',
                 'price' => '$15',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             10 => [
@@ -105,7 +105,7 @@ Route::get('/products', function () {
                 'name' => 'Montre aquaproof noire',
                 'description' => 'Sports Digital Men\'s Quartz Watch Army Alarm Watches Dual Display LED Waterproof Watches',
                 'price' => '$8',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             11 => [
@@ -113,7 +113,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Tissot sport bracelet rouge',
                 'description' => 'TISSOT hommes nouveau 2020 luxe automatique Quatz montres classique bracelet en cuir montre-bracelet',
                 'price' => '$16,82',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             12 => [
@@ -121,7 +121,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Rolex luxury & vintage noire',
                 'description' => 'Ro\'lex Mens Automatic Watches Leather Strap Mechanical Wristwatch Best Gift Watch men with Box',
                 'price' => '$127,74',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             13 => [
@@ -129,7 +129,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Seiko argent',
                 'description' => '2021 New Upgrade !!! SEIKO SRP599J1 Sports Automatic 100M MADE IN JAPAN Men\'s Brand New Watch',
                 'price' => '$5',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             14 => [
@@ -137,7 +137,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Lige verte',
                 'description' => '2020 Marque LIGE Vert Eau Fantôme De Luxe Hommes Montre Étanche Date Horloge Hommes Montres Hommes Quartz Montre-Bracelet Relogio Masculino',
                 'price' => '$42',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             15 => [
@@ -145,7 +145,7 @@ Route::get('/products', function () {
                 'name' => 'Montre classique vintage bracelet en cuir vegan',
                 'description' => 'Brand Pa nerai Watch Mens Mechanical Automatic Watches Best Gift Leather Wristwach with box',
                 'price' => '$42',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             16 => [
@@ -153,7 +153,7 @@ Route::get('/products', function () {
                 'name' => 'Montre classique CITIZEN',
                 'description' => 'Automatic Quatz Watches Male Casual Watch Fancy Watch Quatz Watches Men\'s Watch Waterproof Watches Luxurious Business Wristwatch',
                 'price' => '$11,77',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             17 => [
@@ -161,7 +161,7 @@ Route::get('/products', function () {
                 'name' => 'Montre CURREN cuir',
                 'description' => 'Curren montres Sport montre hommes étanche Quartz horloge Date mâle montre en cuir hommes militaire mode marque homme montres',
                 'price' => '$11',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             18 => [
@@ -169,7 +169,7 @@ Route::get('/products', function () {
                 'name' => 'Montre GENEVA noire et pointes de rouges',
                 'description' => 'Mode Hommes D\'affaires Minimaliste Montres De Luxe Genève Hommes Ultra Mince En Acier Inoxydable Ceinture En Maille Casual Analogique Quartz Montre pour Homme Horloge Cadeaux De Noël Relogio Masculino',
                 'price' => '$24',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             19 => [
@@ -177,7 +177,7 @@ Route::get('/products', function () {
                 'name' => 'Montre S-SHOCK futuriste',
                 'description' => 'Mode SMAEL marque SMAEL montre sport pour hommes Montre sport S Shock Montre à double affichage analogique numérique à DEL électronique',
                 'price' => '$43',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             20 => [
@@ -185,7 +185,7 @@ Route::get('/products', function () {
                 'name' => 'Montre LIGE argent et cadran bleu',
                 'description' => 'LIGE Marque Montre Hommes Mode Sport Quartz Horloge En Cuir Hommes Montres De Luxe Or Étanche Montre D\'affaires Relogio Masculino',
                 'price' => '$17',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             21 => [
@@ -193,7 +193,7 @@ Route::get('/products', function () {
                 'name' => 'Montre classique vintage bracelet en cuir vegan',
                 'description' => 'Brand Pa nerai Watch Mens Mechanical Automatic Watches Best Gift Leather Wristwach with box',
                 'price' => '$42',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             22 => [
@@ -201,7 +201,7 @@ Route::get('/products', function () {
                 'name' => 'Montre LIGE pointes de rouges argentée',
                 'description' => 'Mode Hommes Accessoires Montres Hommes Montres Hommes Militaires Montres d\'affaires Hommes Full Steel Quartz-watch+Box',
                 'price' => '$21',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             23 => [
@@ -209,7 +209,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Citizen bleu caoutchou',
                 'description' => 'CITIZEN Automatic Quatz Watches Montre Blue Angels World Chronographe pour homme avec boîte-cadeau',
                 'price' => '$42',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             24 => [
@@ -217,7 +217,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Winner plaquée or',
                 'description' => 'WINNER Luxury Skeleton Automatique pour Homme Montre Bracelet Acier Inoxydable avec Boîte Cadeau',
                 'price' => '$56',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             25 => [
@@ -225,7 +225,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Tevise argentée et cadran noir',
                 'description' => 'Top Brand Men Mechanical Watch Automatic Fashion Luxury Stainless Steel Male Clock Relogio Masculino 2020',
                 'price' => '$28',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             26 => [
@@ -233,7 +233,7 @@ Route::get('/products', function () {
                 'name' => 'Montre CURREN Chrono\' mecanique apparente',
                 'description' => 'CURREN marque de luxe hommes mode en cuir sport montres hommes armée militaire montre homme grand cadran analogique Quartz horloge Relogio Masculino',
                 'price' => '$49',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             27 => [
@@ -241,7 +241,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Seiko argentée et cadran bleu',
                 'description' => '100% montre Seiko originale montre mécanique automatique pour hommes montre de sport de plongée calendrier anglais garantie globale lumineuse SRP747J',
                 'price' => '$65,59',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             28 => [
@@ -249,7 +249,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Soki cadran jade',
                 'description' => 'Brillent dans le noir montres hauts marque de luxe militaire hommes horloge Quartz armée montre cadran noir Date luxe Sport montre-bracelet',
                 'price' => '$68',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             29 => [
@@ -257,7 +257,7 @@ Route::get('/products', function () {
                 'name' => 'Montre classique Seiko noire',
                 'description' => 'Nouveaux hommes de luxe automatique Quatz montres montre-bracelet en cuir classique avec boîte de mode',
                 'price' => '$25,23',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ],
             30 => [
@@ -265,7 +265,7 @@ Route::get('/products', function () {
                 'name' => 'Montre Seiko Aéro-edition',
                 'description' => 'https://contestimg.wish.com/api/webimage/5f549970066adf003e8a7280-large.jpg?cache_buster=aa2211651911d3044cee897e3f29893f',
                 'price' => '$4',
-                'size' => '12',
+                'amount' => 1,
                 'shipping_price' => '$3',
             ]
         ]

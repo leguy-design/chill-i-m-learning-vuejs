@@ -61,7 +61,7 @@
                     name : product.name,
                     price : product.price,
                     how : 1
-                }
+                };
                 this.listCart.push(itemcart)
             }
         },
