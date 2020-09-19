@@ -17,7 +17,7 @@
             <a href="#" class="text-gray-600 font-semibold">Les Blagues</a>
         </div>
         <div class="h-40 relative mx-2 my-2">
-            <span class="px-14">Joke text</span>
+            <span class="px-14">{{ joke }}</span>
             <button class="absolute left-0 bottom-0 w-full mt-10 py-2 px-4 text-white rounded bg-blue-500 hover:bg-blue-700 focus:outline-none">Ajouter blague</button>
         </div>
     </div>
@@ -25,12 +25,18 @@
 <script>
     export default {
         // on utilise props pour envoyer des values de product
-        props: [
-            'thumbnail',
-            'name',
-            'price',
-            'description'
-        ],
+        data: function() {
+            return {
+                joke: ''
+            }
+        },
+        mounted() {
+            this.joke = this.$store.getters.getCurrentJoke;
 
+        },
     }
+
 </script>
+
+
+

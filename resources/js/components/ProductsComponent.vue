@@ -43,7 +43,7 @@
             }
         },
 
-        // on indique comment passer l'objet'
+        // on indique comment passer l'objet et il sera directement déployé
         methods: {
             // pour récuperer les données des images:
             getProductOnProducts: function () {
@@ -57,14 +57,18 @@
                 });
             },
             addCart(product){
+                //on explique créer une variable qui appelle le product.name, price etc
                 const itemcart = {
                     name : product.name,
                     price : product.price,
                     how : 1
                 };
+                //on envoie toutes ces données dans itemcart qu'on reutilisera plus grace à un v-for
                 this.listCart.push(itemcart)
             }
         },
+
+        //computed est mit en cache selon leurs dépendances. Une propriété calculée sera réévaluée quand certaines de ses dépendances auront changé. dans ce cas l'input avec le v-model 'q'
         computed: {
             getFilteredProd() {
                 return this.products.filter(product => {

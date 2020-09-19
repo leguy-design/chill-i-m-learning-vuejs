@@ -1,6 +1,4 @@
 @extends("layouts.app")
 @section('content')
-    <product-component/>
+    <products-component/>
 @endsection
-
-
