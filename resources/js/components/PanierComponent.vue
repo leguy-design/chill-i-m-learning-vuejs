@@ -1,11 +1,12 @@
 <template>
     <div class="card-body">
-        <span>{{ name }}</span>
-        <span>{{ price }}</span>
+        <span class="uppercase">{{ name }}</span>
+        <span><small>x<strong>{{ amount }}</strong></small></span>
     </div>
 </template>
 <script>
     export default {
-        props: ['name', 'price'],
+        props: ['name', 'amount'],
     }
+
 </script>

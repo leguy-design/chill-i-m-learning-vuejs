@@ -25,16 +25,13 @@
         <div v-if="listCart.length > 0" class="bottom-0 right-0 fixed m-3 card bg-danger text-white">
             <span class="card-header">Panier</span>
             <div v-for="itemcart in listCart">
-                <panier-component :name="itemcart.name" :price="itemcart.price"/>
+                <panier-component :name="itemcart.name" :amount="getAmount(itemcart)"/>
             </div>
         </div>
     </div>
 </template>
 <script>
-    // on exporte ce code vers l'app.js
     export default {
-        // s'occupe d'implémenter la div product-component et est produit a la compilation
-        // on cite la function qu'on return un tableau vide de products'
         data: function () {
             return {
                 listCart: [],
@@ -43,32 +40,53 @@
             }
         },
 
-        // on indique comment passer l'objet et il sera directement déployé
         methods: {
-            // pour récuperer les données des images:
             getProductOnProducts: function () {
                 axios.get('/products')
                     .then(response => {
                         this.products = Object.values(response.data.items).flat();
-                        console.log(this.products);
                     })
-                .catch(error => {
-                    console.log(error);
+                    .catch(error => {
+                        console.log(error);
+                    });
+            },
+
+            addCart: function (product) {
+                let found = false;
+                let itemIndex = -1;
+
+                this.listCart.forEach(function (item, index) {
+                    if (item.name === product.name && item.price === product.price) {
+                        itemIndex = index;
+                        found = true;
+                    }
+                });
+
+                if (found) {
+                    this.listCart[itemIndex].amount++;
+                    return;
+                }
+
+                this.listCart.push({
+                    name: product.name,
+                    price: product.price,
+                    amount: 1,
                 });
             },
-            addCart(product){
-                //on explique créer une variable qui appelle le product.name, price etc
-                const itemcart = {
-                    name : product.name,
-                    price : product.price,
-                    how : 1
-                };
-                //on envoie toutes ces données dans itemcart qu'on reutilisera plus grace à un v-for
-                this.listCart.push(itemcart)
-            }
+
+            getAmount: function (product) {
+                let amount = 0;
+
+                this.listCart.forEach(function (item) {
+                    if (item.name === product.name && item.price === product.price) {
+                        amount = item.amount;
+                    }
+                });
+
+                return amount;
+            },
         },
 
-        //computed est mit en cache selon leurs dépendances. Une propriété calculée sera réévaluée quand certaines de ses dépendances auront changé. dans ce cas l'input avec le v-model 'q'
         computed: {
             getFilteredProd() {
                 return this.products.filter(product => {
@@ -76,7 +94,7 @@
                 })
             }
         },
-        // quand le document est chargé on appelle this.getProductOnProducts
+
         mounted() {
             this.getProductOnProducts();
         },

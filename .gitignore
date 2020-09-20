@@ -1,8 +1,11 @@
-/node_modules
+inode_modules
 /public/hot
+/public/js/app.js
+/public/css/app.csi
 /public/storage
 /storage/*.key
 /vendor
+/node_modules
 .env
 .env.backup
 .phpunit.result.cache
