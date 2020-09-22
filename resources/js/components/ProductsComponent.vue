@@ -55,10 +55,12 @@
             addCart: function (product) {
                 let found = false;
                 let itemIndex = -1;
+                let itemTotal = 0
 
                 this.listCart.forEach(function (item, index) {
                     if (item.name === product.name && item.price === product.price) {
                         itemIndex = index;
+                        itemTotal = item.price * item.amount;
                         found = true;
                     }
                 });
@@ -67,6 +69,7 @@
                     this.listCart[itemIndex].amount++;
 
                     console.log(itemIndex);
+                    console.log(itemTotal);
 
                     return;
                 }
