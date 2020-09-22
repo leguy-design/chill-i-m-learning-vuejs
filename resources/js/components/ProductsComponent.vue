@@ -25,8 +25,9 @@
         <div v-if="listCart.length > 0" class="bottom-0 right-0 fixed m-3 card bg-danger text-white">
             <span class="card-header">Panier</span>
             <div v-for="itemcart in listCart">
-                <panier-component :name="itemcart.name" :amount="getAmount(itemcart)"/>
+                <panier-component :name="itemcart.name" :amount="getAmount(itemcart)" :price="itemcart.price" :total="getTotalAmount(itemcart)"/>
             </div>
+            <span class="card-footer">Total:</span>
         </div>
     </div>
 </template>
@@ -64,13 +65,19 @@
 
                 if (found) {
                     this.listCart[itemIndex].amount++;
+
+                    console.log(itemIndex);
+
                     return;
                 }
+
+                console.log(this.listCart);
 
                 this.listCart.push({
                     name: product.name,
                     price: product.price,
                     amount: 1,
+                    total : product.total
                 });
             },
 
@@ -82,9 +89,19 @@
                         amount = item.amount;
                     }
                 });
-
                 return amount;
             },
+            getTotalAmount: function (product) {
+                let total = 0;
+
+                this.listCart.forEach(function (item) {
+                    if (item.name === product.name && item.price === product.price) {
+                        total = item.total
+                    }
+                });
+                return total;
+            }
+
         },
 
         computed: {
@@ -92,11 +109,21 @@
                 return this.products.filter(product => {
                     return product.description.toLowerCase().includes(this.q.toLowerCase())
                 })
-            }
+            },
         },
 
         mounted() {
             this.getProductOnProducts();
         },
     }
+
 </script>
+
+<!--var quantity = document.getElementsByName("item.amount");-->
+<!--var price = document.getElementsByName("item.price");-->
+<!--var total = 0;-->
+<!--for (var i = 0; i < 8; i++) {-->
+<!--total += parseInt(item.amount[i].value || 0, 10) * parseInt(item.price[i].value || 0, 10);-->
+<!--}-->
+<!--document.getElementById("runtotal").innerHTML = total;-->
+<!--}-->

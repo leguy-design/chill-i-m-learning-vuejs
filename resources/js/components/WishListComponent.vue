@@ -73,13 +73,3 @@
         },
     }
 </script>
-
-let products = [...state.product];
-let foundProduct = products.find(prod => prod.title === action.payload.title);
-
-if (foundProduct) {
-foundProduct.quantity++;
-} else {
-action.payload.quantity = 1;
-products.push(action.payload);
-}
